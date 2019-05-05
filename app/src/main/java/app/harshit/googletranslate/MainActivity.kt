@@ -47,10 +47,7 @@ class MainActivity : AppCompatActivity() {
 
     fun translateTextToEnglish(sourceLanguageId: String, inputText: String, cb: (String) -> Unit) {
 
-        val translateRequest = TranslateRequest(
-            inputText,
-            sourceLanguageId
-        )
+        val translateRequest = TranslateRequest(inputText, sourceLanguageId)
 
         val body = RequestBody.create(
             MediaType.parse("application/json"),
@@ -101,6 +98,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
+    //TODO : Extract text from images using Firebase Vision API
     fun extractTextFromImage(bitmap: Bitmap, cb: (String) -> Unit) {
 
         val firebaseImage = FirebaseVisionImage.fromBitmap(bitmap)
